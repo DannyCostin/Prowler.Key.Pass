@@ -4,7 +4,7 @@ You can store all your passwords in one database, which is locked with a key.
 
 App Copyright (C) 2021 Danny Costin.
 
-Images Copyright (C) Butkovits Atila.
+Images Copyright (C) Butkovits Atila https://atibutkovits.wixsite.com/badog/
 
 This program is free software; you can redistribute it under the terms of the GNU General Public License
 as published by the Free Software Foundation; either version 2
