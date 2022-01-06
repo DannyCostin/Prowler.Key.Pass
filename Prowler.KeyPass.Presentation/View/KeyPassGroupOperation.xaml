@@ -1,0 +1,76 @@
+﻿<UserControl x:Class="Prowler.KeyPass.Presentation.View.KeyPassGroupOperation"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Prowler.KeyPass.Presentation.View"
+             xmlns:helper="clr-namespace:Prowler.KeyPass.Presentation.Helper"
+             mc:Ignorable="d"  Loaded="UserControl_Loaded"
+             d:DesignHeight="450" d:DesignWidth="800" Visibility="{Binding Path=GroupOperationView.ShowGroupOperationView}"
+             KeyboardNavigation.TabNavigation="Cycle">
+    <UserControl.Resources>
+        <DataTemplate x:Key="IconItem">
+            <Grid Background="{Binding _Border, RelativeSource={RelativeSource AncestorType=ListBoxItem}}"  d:Height="50" VerticalAlignment="Top">
+                <Image Source="{Binding}" Height="30" Width="30" VerticalAlignment="Top"></Image>
+            </Grid>
+        </DataTemplate>
+
+        <Style x:Key="ListBoxItemStyle" TargetType="ListBoxItem">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ListBoxItem">
+                        <Border Name="_Border"
+                                Padding="2"
+                                SnapsToDevicePixels="true">
+                            <ContentPresenter />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsSelected" Value="true">
+                                <Setter TargetName="_Border" Property="Background" Value="{StaticResource ListItemSelected2}"/>
+                                <Setter Property="Foreground" Value="White"/>
+                            </Trigger>
+                            <Trigger Property="IsSelected" Value="False">
+                                <Setter TargetName="_Border" Property="Background" Value="Transparent"/>
+                                <Setter Property="Foreground" Value="#FF1990EA"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <Grid Background="{StaticResource ListItemBackground}">
+        <StackPanel Margin="10,10,10,0">
+            <StackPanel Orientation="Horizontal">
+                <Image RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True" Source="{StaticResource LockLight}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,15,0,0" Height="20" Width="20"/>
+                <TextBlock Text="Group" VerticalAlignment="Top" Foreground="WhiteSmoke" FontSize="23" Margin="2,9,0,0"></TextBlock>
+            </StackPanel>
+            <TextBlock Style="{StaticResource TextBoxTextBlock}" Text="Name"></TextBlock>
+            <Border Style="{StaticResource TextBoxBorder}">
+                <TextBox helper:FocusExtension.IsFocused="{Binding Path=GroupOperationView.Focus}" Style="{StaticResource TextBox}" Text="{Binding Path=GroupOperationView.Name}"></TextBox>
+            </Border>
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                <TextBlock Style="{StaticResource TextBoxTextBlock}" Text="Icon"></TextBlock>
+                <ListBox Margin="5,0,0,0" Width="272" Height="355" x:Name="IconList" BorderThickness="0" Background="Transparent"   
+                 ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                 ScrollViewer.VerticalScrollBarVisibility="Hidden"
+                 ItemContainerStyle="{StaticResource ListBoxItemStyle}" 
+                 ItemTemplate="{StaticResource IconItem}"
+                 SelectedValue="{Binding GroupOperationView.IconID}"
+                     >
+                    <ListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel IsItemsHost="True" />
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
+                </ListBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,5,0">
+                <Button x:Name="btnOperation" HorizontalAlignment="Left" Margin="0,0,0,0" Height="30" Width="50" Content="{Binding Path=GroupOperationView.ButtonName}" Click="btnOperation_Click"></Button>
+                <Button x:Name="btnCancel" Click="btnCancel_Click" HorizontalAlignment="Left" Margin="5,0,0,0" Height="30" Width="50" Content="Cancel"></Button>
+            </StackPanel>
+            
+            <TextBlock TextWrapping="Wrap" Style="{StaticResource TextBoxTextBlock}" Foreground="Red" Text="{Binding Path=GroupOperationView.ErrorMessage}"></TextBlock>
+        </StackPanel>
+    </Grid>
+</UserControl>

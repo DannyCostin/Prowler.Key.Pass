@@ -1,0 +1,29 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <BitmapImage x:Key="Logo" UriSource="/Images/logo.png"></BitmapImage>
+    <BitmapImage x:Key="LoginImage" UriSource="/Images/login_image.png"></BitmapImage>
+    <BitmapImage x:Key="Save" UriSource="/Images/Actions/Disk.png"></BitmapImage>
+    <BitmapImage x:Key="DeleteLight" UriSource="/Images/Actions/delete_light.png"></BitmapImage>
+    <BitmapImage x:Key="DeleteDark" UriSource="/Images/Actions/delete_dark.png"></BitmapImage>
+    <BitmapImage x:Key="EditLight" UriSource="/Images/Actions/edit_light.png"></BitmapImage>
+    <BitmapImage x:Key="EditDark" UriSource="/Images/Actions/edit_dark.png"></BitmapImage>
+    <BitmapImage x:Key="LockLight" UriSource="/Images/Actions/lock_light.png"></BitmapImage>
+    <BitmapImage x:Key="LockDark" UriSource="/Images/Actions/lock_dark.png"></BitmapImage>
+    <BitmapImage x:Key="NewLight" UriSource="/Images/Actions/new_light.png"></BitmapImage>
+    <BitmapImage x:Key="NewDark" UriSource="/Images/Actions/new_dark.png"></BitmapImage>
+    <BitmapImage x:Key="NoteLight" UriSource="/Images/Actions/note_light.png"></BitmapImage>
+    <BitmapImage x:Key="NoteDark" UriSource="/Images/Actions/note_dark.png"></BitmapImage>
+    <BitmapImage x:Key="SearchLight" UriSource="/Images/Actions/search_light.png"></BitmapImage>
+    <BitmapImage x:Key="SearchDark" UriSource="/Images/Actions/search_dark.png"></BitmapImage>
+    <BitmapImage x:Key="UserLight" UriSource="/Images/Actions/user_light.png"></BitmapImage>
+    <BitmapImage x:Key="UserDark" UriSource="/Images/Actions/user_dark.png"></BitmapImage>
+    <BitmapImage x:Key="Back01" UriSource="/Images/back01.jpg"></BitmapImage>
+    <BitmapImage x:Key="Back02" UriSource="/Images/back02.jpg"></BitmapImage>
+    <BitmapImage x:Key="Back03" UriSource="/Images/back03.jpg"></BitmapImage>
+    <BitmapImage x:Key="Back04" UriSource="/Images/back04.jpg"></BitmapImage>
+    <BitmapImage x:Key="Back05" UriSource="/Images/back05.jpg"></BitmapImage>
+    <BitmapImage x:Key="Backp" UriSource="/Images/backp.jpg"></BitmapImage>
+    <BitmapImage x:Key="PayPal" UriSource="/Images/paypal.gif"></BitmapImage>
+    
+</ResourceDictionary>

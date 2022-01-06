@@ -1,0 +1,55 @@
+﻿<UserControl x:Class="Prowler.KeyPass.Presentation.View.KeyPassKeyOperation"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Prowler.KeyPass.Presentation.View"
+             xmlns:helper="clr-namespace:Prowler.KeyPass.Presentation.Helper"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="800" 
+             Visibility="{Binding Path=KeyOperationView.ShowKeyOperationView}" 
+             Loaded="UserControl_Loaded"
+             KeyboardNavigation.TabNavigation="Cycle">
+    <Grid Background="{StaticResource Background}">
+        <Grid Background="{StaticResource BackgroundColor2}" Width="610" HorizontalAlignment="Right">
+            <Grid.Effect>
+                <DropShadowEffect Direction="0" ShadowDepth="0" Color="Black"/>
+            </Grid.Effect>
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Right" Margin="0,65,0,0">
+                <TextBlock Style="{StaticResource TextBoxTextBlock}" Text="Icon" Margin="5,7,0,7"></TextBlock>
+                <local:KeyPassIconList Width="230" Height="500" Margin="0,0,0,0"/>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Right" Margin="0,30,252,0" Width="320">
+                <TextBlock Text="{Binding Path=KeyOperationView.ActionTitle}" Foreground="White" FontSize="25"></TextBlock>
+                <TextBlock Style="{StaticResource TextBoxTextBlock}" Text="Title"></TextBlock>
+                <Border Style="{StaticResource TextBoxBorder}">
+                    <TextBox helper:FocusExtension.IsFocused="{Binding Path=KeyOperationView.Focus}" Style="{StaticResource TextBox}" Text="{Binding Path=KeyOperationView.Title}"></TextBox>
+                </Border>
+                <TextBlock Style="{StaticResource TextBoxTextBlock}" Text="User name"></TextBlock>
+                <Border Style="{StaticResource TextBoxBorder}">
+                    <TextBox Style="{StaticResource TextBox}" Text="{Binding Path=KeyOperationView.UserName}"></TextBox>
+                </Border>
+                <TextBlock Style="{StaticResource TextBoxTextBlock}" Text="Password"></TextBlock>
+                <StackPanel Orientation="Horizontal">
+                    <Border Style="{StaticResource TextBoxBorder}" Width="250">
+                        <PasswordBox Style="{StaticResource PasswordBox}" x:Name="Password" KeyUp="Password_KeyUp"></PasswordBox>
+                    </Border>
+                    <Button x:Name="btnGeneratePass" Content="Generate" Margin="10,5,0,0" Height="30" Click="btnGeneratePass_Click" Width="58"></Button>
+                </StackPanel>
+                <TextBlock Style="{StaticResource TextBoxTextBlock}" Text="Url"></TextBlock>
+                <Border Style="{StaticResource TextBoxBorder}">
+                    <TextBox Style="{StaticResource TextBox}" Text="{Binding Path=KeyOperationView.Url}"></TextBox>
+                </Border>
+                <TextBlock Style="{StaticResource TextBoxTextBlock}" Text="Note"></TextBlock>
+                <Border Style="{StaticResource TextBoxBorder}">
+                    <TextBox Style="{StaticResource TextBox}" AcceptsReturn="True" FontSize="15" Text="{Binding Path=KeyOperationView.Note}" Height="150" VerticalContentAlignment="Top" VerticalScrollBarVisibility="Auto"></TextBox>
+                </Border>
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="btnOperation" Content="{Binding Path=KeyOperationView.ButtonName}" Margin="0,10,0,0" Height="30" Click="btnOperation_Click" Width="60"></Button>
+                    <Button x:Name="btnCancel" Content="Cancel" Margin="10,10,0,0" Height="30" Click="btnCancel_Click" Width="60"></Button>
+                </StackPanel>
+                <TextBlock Style="{StaticResource TextBoxTextBlock}" Text="{Binding Path=KeyOperationView.ErrorMessage}" Foreground="Red"></TextBlock>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,129 @@
+﻿<UserControl x:Class="Prowler.KeyPass.Presentation.View.KeyPassKeyList"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Prowler.KeyPass.Presentation.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" Visibility="{Binding ShowKeyList}"
+             KeyboardNavigation.TabNavigation="Cycle">
+    <UserControl.Resources>
+        <ContextMenu x:Key="ListItemContextMenu">
+            <MenuItem x:Name="EditMenu" Header="Edit" FontWeight="Bold" Click="EditMenu_Click">
+                <MenuItem.Icon>
+                    <Image Source="{StaticResource EditDark}" />
+                </MenuItem.Icon>
+            </MenuItem>
+            <Separator />
+            <MenuItem x:Name="CopyUserMenu" Header="Copy User name" Click="CopyUserMenu_Click" InputGestureText="Ctrl+A">
+                <MenuItem.Icon>
+                    <Image Source="{StaticResource UserDark}" />
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem x:Name="CopyPasswordMenu" Header="Copy Password" Click="CopyPasswordMenu_Click" InputGestureText="Ctrl+S">
+                <MenuItem.Icon>
+                    <Image Source="{StaticResource LockDark}" />
+                </MenuItem.Icon>
+            </MenuItem>
+            <Separator />
+            <MenuItem x:Name="DeleteMenu" Header="Delete" Click="DeleteMenu_Click" InputGestureText="Delete">
+                <MenuItem.Icon>
+                    <Image Source="{StaticResource DeleteDark}" />
+                </MenuItem.Icon>
+            </MenuItem>
+        </ContextMenu>
+        
+        <DataTemplate x:Key="KeyItem">
+            <Grid d:Height="50" Height="{Binding Height}" >
+                <Rectangle Width="4" Fill="{Binding Foreground, RelativeSource={RelativeSource AncestorType=ListBoxItem}}" HorizontalAlignment="Left" Margin="0,0,0,5"></Rectangle>
+                <StackPanel Orientation="Horizontal" Margin="5,0,120,0">
+                    <Button Style="{StaticResource ButtonLight}" x:Name="btnShowDetails" BorderThickness="0" Background="Transparent" Click="btnShowDetails_Click" VerticalAlignment="Top" Content="{Binding DetailsControlText}" Height="20" Width="20"></Button>
+                    <Image Source="{Binding Path=IconID}" VerticalAlignment="Top" Margin="5,0,0,0" Height="32" Width="32"></Image>
+                    <StackPanel Margin="8,0,0,0" >
+                        <TextBlock Margin="0" Text="{Binding Path=Title}" FontSize="18" FontWeight="Medium" Foreground="{StaticResource TextForegroundListItem}"></TextBlock>
+                        <TextBlock x:Name="Link" Margin="0" Text="{Binding Path=Url}" FontSize="14" Foreground="{StaticResource ListItemSelected2}" Cursor="Hand" MouseLeftButtonUp="Link_MouseLeftButtonUp" MouseRightButtonUp="Link_MouseRightButtonUp"></TextBlock>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="35,50,0,0">
+                    <Image Source="{StaticResource UserDark}" Height="25" Width="25"></Image>
+                    <TextBlock Text="{Binding Path=UserName}" Foreground="{StaticResource TextForegroundListItem}" Margin="5,5,0,0"></TextBlock>
+                </StackPanel>
+                <Image Source="{StaticResource NoteDark}" VerticalAlignment="Top" Margin="35,90,0,0" HorizontalAlignment="Left" Height="25" Width="25"></Image>
+                <Grid Margin="65,70,120,0" MinWidth="0" VerticalAlignment="Top" HorizontalAlignment="Stretch">
+                    <TextBox Margin="0,20,0,0" Opacity="0.6" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" 
+                                 AcceptsReturn="True" 
+                                 Text="{Binding Path=Note}" IsReadOnly="True" FontSize="14"  
+                                 Foreground="{StaticResource TextForegroundListItem}" Height="100" TextWrapping="Wrap">
+                    </TextBox>
+                </Grid>
+                <Border HorizontalAlignment="Right" VerticalAlignment="Top" Width="120" Height="30" BorderThickness="0" CornerRadius="10" BorderBrush="Black" Background="Transparent">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Button ToolTip="Copy User name" Style="{StaticResource ButtonLight}" x:Name="btnGetUser" Height="25" Width="25" Click="btnGetUser_Click" Margin="0,0,0,0">
+                            <Image RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True" Height="20" Width="20" Source="{StaticResource UserDark}"></Image>
+                        </Button>
+                        <Button ToolTip="Copy password" Style="{StaticResource ButtonLight}" x:Name="btnGetPassword" Height="25" Width="25" Click="btnGetPassword_Click" Margin="3,0,0,0">
+                            <Image RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True" Height="20" Width="20" Source="{StaticResource LockDark}"></Image>
+                        </Button>
+                        <Button ToolTip="Edit" Style="{StaticResource ButtonLight}" x:Name="btnEditEntry" Height="25" Width="25" Click="btnEditEntry_Click" Margin="3,0,0,0">
+                            <Image RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True" Height="20" Width="20" Source="{StaticResource EditDark}"></Image>
+                        </Button>
+                        <Button ToolTip="Delete" Style="{StaticResource ButtonLight}" x:Name="btnDeleteEntry" Height="25" Width="25" Click="btnDeleteEntry_Click" Margin="3,0,0,0">
+                            <Image RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True" Height="20" Width="20" Source="{StaticResource DeleteDark}"></Image>
+                        </Button>
+                    </StackPanel>
+                </Border>
+                <Border Visibility="{Binding Path=ShowGroupLabel}" Height="23" VerticalAlignment="Top" CornerRadius="8" HorizontalAlignment="Right" Margin="0,4,120,0" Background="{StaticResource ListItemBackground}">
+                    <TextBlock Text="{Binding Path=GroupName}" Foreground="{StaticResource ListItemBorder}" TextAlignment="Center" Margin="7,3,7,3"></TextBlock>
+                </Border>
+                <Rectangle Fill="{StaticResource ListItemBorder}" Height="1" VerticalAlignment="Bottom"></Rectangle>
+            </Grid>
+        </DataTemplate>
+
+        <Style x:Key="_ListBoxItemStyle" TargetType="ListBoxItem">
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"></Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ListBoxItem">
+                        <Border Name="_Border"
+                                Padding="2"
+                                SnapsToDevicePixels="true">
+                            <ContentPresenter />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsSelected" Value="true">
+                                <Setter TargetName="_Border" Property="Background" Value="Transparent"/>
+                                <Setter Property="Foreground" Value="{StaticResource ListItemSelected}"/>
+                            </Trigger>
+                            <Trigger Property="IsSelected" Value="False">
+                                <Setter TargetName="_Border" Property="Background" Value="Transparent"/>
+                                <Setter Property="Foreground" Value="Transparent"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ContextMenu" Value="{StaticResource ListItemContextMenu}"></Setter>
+        </Style>
+    </UserControl.Resources>
+    <Grid Background="Transparent">
+        <Button Style="{StaticResource ButtonLight}" x:Name="btnNewKey" VerticalAlignment="Top" Height="30" Width="105" HorizontalAlignment="Left" Click="btnNewKey_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image RenderOptions.BitmapScalingMode="HighQuality" SnapsToDevicePixels="True" Height="20" Width="20" Source="{StaticResource EditDark}"></Image>
+                <TextBlock Text="Add new key" VerticalAlignment="Center" Margin="5,0,0,0"></TextBlock>
+            </StackPanel>
+        </Button>
+        <Rectangle Height="1" Fill="{StaticResource ListItemBorder}" VerticalAlignment="Top" Margin="0,35,0,0"></Rectangle>
+        <Border Margin="0,40,0,0" BorderThickness="0" CornerRadius="0" BorderBrush="{StaticResource ListItemBorder}" Background="Transparent">
+            <ListBox x:Name="KeyList" BorderThickness="0" Background="Transparent" ScrollViewer.CanContentScroll="True" FocusVisualStyle="{x:Null}"
+                     ItemContainerStyle="{StaticResource _ListBoxItemStyle}" 
+                     ItemTemplate="{StaticResource KeyItem}" 
+                     ItemsSource="{Binding KeyList}"
+                     SelectedValue="{Binding KeyListSelectedValue}"
+                     ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                      KeyUp="KeyList_KeyUp"
+                     d:ItemsSource="{d:SampleData ItemCount=5}"
+                     >
+            </ListBox>
+        </Border>
+    </Grid>
+</UserControl>

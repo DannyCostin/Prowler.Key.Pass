@@ -1,0 +1,223 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>Tigru.ico</ApplicationIcon>
+    <AssemblyName>ProwlerKeyPass</AssemblyName>
+    <Company>Danny Costin</Company>
+    <Description>Prowler Key Pass is a free open source password manager, which helps you to manage your passwords in a secure way</Description>
+    <Copyright>(c) 2021 Danny Costin</Copyright>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\Actions\delete_dark.png" />
+    <None Remove="Images\Actions\delete_light.png" />
+    <None Remove="Images\Actions\Disk.png" />
+    <None Remove="Images\Actions\edit_dark.png" />
+    <None Remove="Images\Actions\edit_light.png" />
+    <None Remove="Images\Actions\lock_dark.png" />
+    <None Remove="Images\Actions\lock_light.png" />
+    <None Remove="Images\Actions\new_dark.png" />
+    <None Remove="Images\Actions\new_light.png" />
+    <None Remove="Images\Actions\note_dark.png" />
+    <None Remove="Images\Actions\note_light.png" />
+    <None Remove="Images\Actions\search_dark.png" />
+    <None Remove="Images\Actions\search_light.png" />
+    <None Remove="Images\Actions\user_dark.png" />
+    <None Remove="Images\Actions\user_light.png" />
+    <None Remove="Images\back01.jpg" />
+    <None Remove="Images\back02.jpg" />
+    <None Remove="Images\back03.jpg" />
+    <None Remove="Images\back04.jpg" />
+    <None Remove="Images\back05.jpg" />
+    <None Remove="Images\backp.jpg" />
+    <None Remove="Images\Icons\1298711_logo_skype_chat_communication_message_icon.png" />
+    <None Remove="Images\Icons\1298714_photoshop_ps_psd_adobe_graphic_icon.png" />
+    <None Remove="Images\Icons\1298718_drive_google_data_google drive_storage_icon.png" />
+    <None Remove="Images\Icons\1298762_shopify_icon.png" />
+    <None Remove="Images\Icons\1298766_spotify_music_sound_icon.png" />
+    <None Remove="Images\Icons\1298767_tinder_icon.png" />
+    <None Remove="Images\Icons\1298772_viber_chat_logo_messenger_talk_icon.png" />
+    <None Remove="Images\Icons\1298776_wordpress_icon.png" />
+    <None Remove="Images\Icons\1920522_dropbox_logo_network_social_icon.png" />
+    <None Remove="Images\Icons\2613285_amazon_cloud computing_commerce_company_electronics_icon.png" />
+    <None Remove="Images\Icons\2613310_chat_email_messenger_social media_web service_icon.png" />
+    <None Remove="Images\Icons\291690_viddler_movie_social_social media_logo_icon.png" />
+    <None Remove="Images\Icons\291692_social media_social_logo_pinterest_icon.png" />
+    <None Remove="Images\Icons\291697_soundcloud_sound_music_social_logo_icon.png" />
+    <None Remove="Images\Icons\291716_github_logo_social network_social_icon.png" />
+    <None Remove="Images\Icons\2993728_treehouse_social media_icon.png" />
+    <None Remove="Images\Icons\2993732_wechat_social media_icon.png" />
+    <None Remove="Images\Icons\3057666_media_network_rss_social_icon.png" />
+    <None Remove="Images\Icons\3171663_link_share_icon.png" />
+    <None Remove="Images\Icons\317717_operating system_windows_icon.png" />
+    <None Remove="Images\Icons\317720_social media_tweet_twitter_social_icon.png" />
+    <None Remove="Images\Icons\317752_facebook_social media_social_icon.png" />
+    <None Remove="Images\Icons\317757_apple_macintosh_steve jobs_icon.png" />
+    <None Remove="Images\Icons\3838998_bitcoin_cryptocurrency_currency_money_finance_icon.png" />
+    <None Remove="Images\Icons\4102585_applications_media_myspace_social_icon.png" />
+    <None Remove="Images\Icons\4102606_applications_media_social_whatsapp_icon.png" />
+    <None Remove="Images\Icons\4102608_applications_media_social_tumblr_icon.png" />
+    <None Remove="Images\Icons\4201998_overflow_question_stock_stockoverflow_logo_icon.png" />
+    <None Remove="Images\Icons\4202006_chrome_logo_social_social media_icon.png" />
+    <None Remove="Images\Icons\4202013_browser_firefox_logo_social_social media_icon.png" />
+    <None Remove="Images\Icons\4202014_finder_apple_logo_social_social media_icon.png" />
+    <None Remove="Images\Icons\4202027_baidu_logo_social_social media_icon.png" />
+    <None Remove="Images\Icons\4202032_amd_logo_social_social media_icon.png" />
+    <None Remove="Images\Icons\4202044_media_player_video_windows_icon.png" />
+    <None Remove="Images\Icons\4202051_utorrent_logo_social_social media_torrent_icon.png" />
+    <None Remove="Images\Icons\4202081_paypal_logo_payment_social_social media_icon.png" />
+    <None Remove="Images\Icons\4202089_nvidia_game_graphics_icon.png" />
+    <None Remove="Images\Icons\4202093_msn_logo_social_social media_icon.png" />
+    <None Remove="Images\Icons\4202103_office_logo_microsoft_ms_social_icon.png" />
+    <None Remove="Images\Icons\4202108_edge_browser_e_logo_icon.png" />
+    <None Remove="Images\Icons\4550863_classmates_education_learn_learning_teaching_icon.png" />
+    <None Remove="Images\Icons\4550868_calling_chat_chatting_viber_video calling_icon.png" />
+    <None Remove="Images\Icons\4975311_business_chart_data_graph_report_icon.png" />
+    <None Remove="Images\Icons\5000696_network_online_social media_social network_logo_icon.png" />
+    <None Remove="Images\Icons\5000712_gmail_google_network_online_social media_icon.png" />
+    <None Remove="Images\Icons\5172567_heart_like_love_icon.png" />
+    <None Remove="Images\Icons\5296501_linkedin_network_linkedin logo_icon.png" />
+    <None Remove="Images\Icons\5296504_forum_reddit_reddit logo_icon.png" />
+    <None Remove="Images\Icons\5296519_video_vimeo_vimeo logo_icon.png" />
+    <None Remove="Images\Icons\5296520_bubble_chat_mobile_whatsapp_whatsapp logo_icon.png" />
+    <None Remove="Images\Icons\5296522_youtube_youtube logo_icon.png" />
+    <None Remove="Images\Icons\6636603_instagram_social media_social network_icon.png" />
+    <None Remove="Images\Icons\940991_tube_you_youtube_yt icon_icon.png" />
+    <None Remove="Images\Icons\card-icon.png" />
+    <None Remove="Images\Icons\coud-icon.png" />
+    <None Remove="Images\Icons\git01-icon.png" />
+    <None Remove="Images\Icons\google-icon.png" />
+    <None Remove="Images\Icons\key_light.png" />
+    <None Remove="Images\Icons\mail-icon.png" />
+    <None Remove="Images\Icons\netflix-icon.png" />
+    <None Remove="Images\Icons\prowler-icon.png" />
+    <None Remove="Images\Icons\ps-icon.png" />
+    <None Remove="Images\Icons\rdp-icon.png" />
+    <None Remove="Images\Icons\steam-icon.png" />
+    <None Remove="Images\Icons\web_light.png" />
+    <None Remove="Images\Icons\windows-icon.png" />
+    <None Remove="Images\Icons\wow-icon.png" />
+    <None Remove="Images\Icons\xbox-icon.png" />
+    <None Remove="Images\login_image.png" />
+    <None Remove="Images\logo.png" />
+    <None Remove="Images\paypal.gif" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Tigru.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\Actions\delete_dark.png" />
+    <Resource Include="Images\Actions\delete_light.png" />
+    <Resource Include="Images\Actions\Disk.png" />
+    <Resource Include="Images\Actions\edit_dark.png" />
+    <Resource Include="Images\Actions\edit_light.png" />
+    <Resource Include="Images\Actions\lock_dark.png" />
+    <Resource Include="Images\Actions\lock_light.png" />
+    <Resource Include="Images\Actions\new_dark.png" />
+    <Resource Include="Images\Actions\new_light.png" />
+    <Resource Include="Images\Actions\note_dark.png" />
+    <Resource Include="Images\Actions\note_light.png" />
+    <Resource Include="Images\Actions\search_dark.png" />
+    <Resource Include="Images\Actions\search_light.png" />
+    <Resource Include="Images\Actions\user_dark.png" />
+    <Resource Include="Images\Actions\user_light.png" />
+    <Resource Include="Images\back01.jpg" />
+    <Resource Include="Images\back02.jpg" />
+    <Resource Include="Images\back03.jpg" />
+    <Resource Include="Images\back04.jpg" />
+    <Resource Include="Images\back05.jpg" />
+    <Resource Include="Images\backp.jpg" />
+    <Resource Include="Images\Icons\1298711_logo_skype_chat_communication_message_icon.png" />
+    <Resource Include="Images\Icons\1298714_photoshop_ps_psd_adobe_graphic_icon.png" />
+    <Resource Include="Images\Icons\1298718_drive_google_data_google drive_storage_icon.png" />
+    <Resource Include="Images\Icons\1298762_shopify_icon.png" />
+    <Resource Include="Images\Icons\1298766_spotify_music_sound_icon.png" />
+    <Resource Include="Images\Icons\1298767_tinder_icon.png" />
+    <Resource Include="Images\Icons\1298772_viber_chat_logo_messenger_talk_icon.png" />
+    <Resource Include="Images\Icons\1298776_wordpress_icon.png" />
+    <Resource Include="Images\Icons\1920522_dropbox_logo_network_social_icon.png" />
+    <Resource Include="Images\Icons\2613285_amazon_cloud computing_commerce_company_electronics_icon.png" />
+    <Resource Include="Images\Icons\2613310_chat_email_messenger_social media_web service_icon.png" />
+    <Resource Include="Images\Icons\291690_viddler_movie_social_social media_logo_icon.png" />
+    <Resource Include="Images\Icons\291692_social media_social_logo_pinterest_icon.png" />
+    <Resource Include="Images\Icons\291697_soundcloud_sound_music_social_logo_icon.png" />
+    <Resource Include="Images\Icons\291716_github_logo_social network_social_icon.png" />
+    <Resource Include="Images\Icons\2993728_treehouse_social media_icon.png" />
+    <Resource Include="Images\Icons\2993732_wechat_social media_icon.png" />
+    <Resource Include="Images\Icons\3057666_media_network_rss_social_icon.png" />
+    <Resource Include="Images\Icons\3171663_link_share_icon.png" />
+    <Resource Include="Images\Icons\317717_operating system_windows_icon.png" />
+    <Resource Include="Images\Icons\317720_social media_tweet_twitter_social_icon.png" />
+    <Resource Include="Images\Icons\317752_facebook_social media_social_icon.png" />
+    <Resource Include="Images\Icons\317757_apple_macintosh_steve jobs_icon.png" />
+    <Resource Include="Images\Icons\3838998_bitcoin_cryptocurrency_currency_money_finance_icon.png" />
+    <Resource Include="Images\Icons\4102585_applications_media_myspace_social_icon.png" />
+    <Resource Include="Images\Icons\4102606_applications_media_social_whatsapp_icon.png" />
+    <Resource Include="Images\Icons\4102608_applications_media_social_tumblr_icon.png" />
+    <Resource Include="Images\Icons\4201998_overflow_question_stock_stockoverflow_logo_icon.png" />
+    <Resource Include="Images\Icons\4202006_chrome_logo_social_social media_icon.png" />
+    <Resource Include="Images\Icons\4202013_browser_firefox_logo_social_social media_icon.png" />
+    <Resource Include="Images\Icons\4202014_finder_apple_logo_social_social media_icon.png" />
+    <Resource Include="Images\Icons\4202027_baidu_logo_social_social media_icon.png" />
+    <Resource Include="Images\Icons\4202032_amd_logo_social_social media_icon.png" />
+    <Resource Include="Images\Icons\4202044_media_player_video_windows_icon.png" />
+    <Resource Include="Images\Icons\4202051_utorrent_logo_social_social media_torrent_icon.png" />
+    <Resource Include="Images\Icons\4202081_paypal_logo_payment_social_social media_icon.png" />
+    <Resource Include="Images\Icons\4202089_nvidia_game_graphics_icon.png" />
+    <Resource Include="Images\Icons\4202093_msn_logo_social_social media_icon.png" />
+    <Resource Include="Images\Icons\4202103_office_logo_microsoft_ms_social_icon.png" />
+    <Resource Include="Images\Icons\4202108_edge_browser_e_logo_icon.png" />
+    <Resource Include="Images\Icons\4550863_classmates_education_learn_learning_teaching_icon.png" />
+    <Resource Include="Images\Icons\4550868_calling_chat_chatting_viber_video calling_icon.png" />
+    <Resource Include="Images\Icons\4975311_business_chart_data_graph_report_icon.png" />
+    <Resource Include="Images\Icons\5000696_network_online_social media_social network_logo_icon.png" />
+    <Resource Include="Images\Icons\5000712_gmail_google_network_online_social media_icon.png" />
+    <Resource Include="Images\Icons\5172567_heart_like_love_icon.png" />
+    <Resource Include="Images\Icons\5296501_linkedin_network_linkedin logo_icon.png" />
+    <Resource Include="Images\Icons\5296504_forum_reddit_reddit logo_icon.png" />
+    <Resource Include="Images\Icons\5296519_video_vimeo_vimeo logo_icon.png" />
+    <Resource Include="Images\Icons\5296520_bubble_chat_mobile_whatsapp_whatsapp logo_icon.png" />
+    <Resource Include="Images\Icons\5296522_youtube_youtube logo_icon.png" />
+    <Resource Include="Images\Icons\6636603_instagram_social media_social network_icon.png" />
+    <Resource Include="Images\Icons\940991_tube_you_youtube_yt icon_icon.png" />
+    <Resource Include="Images\Icons\card-icon.png" />
+    <Resource Include="Images\Icons\coud-icon.png" />
+    <Resource Include="Images\Icons\git01-icon.png" />
+    <Resource Include="Images\Icons\google-icon.png" />
+    <Resource Include="Images\Icons\key_light.png" />
+    <Resource Include="Images\Icons\mail-icon.png" />
+    <Resource Include="Images\Icons\netflix-icon.png" />
+    <Resource Include="Images\Icons\prowler-icon.png" />
+    <Resource Include="Images\Icons\ps-icon.png" />
+    <Resource Include="Images\Icons\rdp-icon.png" />
+    <Resource Include="Images\Icons\steam-icon.png" />
+    <Resource Include="Images\Icons\web_light.png" />
+    <Resource Include="Images\Icons\windows-icon.png" />
+    <Resource Include="Images\Icons\wow-icon.png" />
+    <Resource Include="Images\Icons\xbox-icon.png" />
+    <Resource Include="Images\login_image.png" />
+    <Resource Include="Images\logo.png" />
+    <Resource Include="Images\paypal.gif" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Prowler.KeyPass.Core\Prowler.KeyPass.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Manual\prowler_key_pass_help.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

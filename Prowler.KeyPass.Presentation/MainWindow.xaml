@@ -1,0 +1,49 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Prowler.KeyPass.Presentation"
+        xmlns:View="clr-namespace:Prowler.KeyPass.Presentation.View" x:Class="Prowler.KeyPass.Presentation.MainWindow"
+        mc:Ignorable="d"
+        Title="Prowler Key Pass" MinHeight="480" MinWidth="480" Height="600" Width="1134" WindowStyle="None" ResizeMode="CanResize" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="0"/>
+    </WindowChrome.WindowChrome>
+    <Window.Resources>
+        <Style TargetType="Border" x:Key="windowButtons">
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="true">
+                    <Setter Property="BorderBrush" Value="Black"></Setter>
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="false">
+                    <Setter Property="BorderBrush" Value="Transparent"></Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Grid Background="Transparent">
+        <View:KeyPassMain x:Name="KeyPass" />
+        <Rectangle x:Name="Header" Fill="Transparent" Height="30" VerticalAlignment="Top" MouseDown="Header_MouseDown"></Rectangle>
+        <StackPanel Margin="15,10,0,0" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Right" Width="80">
+            <Border Background="#FFFFBD2F" CornerRadius="30" x:Name="WindowMinimize" Margin="0,0,5,0" Height="20" Width="20"
+                                HorizontalAlignment="Left" VerticalAlignment="Top" BorderThickness="0" 
+                                Style="{StaticResource windowButtons}" 
+                                MouseLeftButtonUp="WindowMinimize_MouseLeftButtonUp"
+                                >
+                <Border BorderThickness="0,0,0,3" BorderBrush="{Binding ElementName=WindowMinimize, Path=BorderBrush}" Height="10" Width="12"></Border>
+            </Border>
+            <Border Background="#FF3ECB42" CornerRadius="30" x:Name="WindowStates" Height="20" Width="20" Margin="0,0,5,0"
+                                HorizontalAlignment="Left" VerticalAlignment="Top" BorderThickness="0"                                                                 
+                                MouseLeftButtonUp="WindowState_MouseLeftButtonUp" Style="{StaticResource windowButtons}" >
+                <Border BorderThickness="1,4,1,1" BorderBrush="{Binding ElementName=WindowStates, Path=BorderBrush}" Height="10" Width="12"></Border>
+            </Border>
+            <Border Background="#FFFD4B4B" CornerRadius="30" x:Name="WindowClose" Height="20" Width="20" Margin="0,0,5,0" 
+                            HorizontalAlignment="Left" VerticalAlignment="Top" BorderThickness="0"
+                                MouseLeftButtonUp="WindowClose_MouseLeftButtonUp" Style="{StaticResource windowButtons}">
+                <Path Data="M6.0256443,4.9241276 L8.5202732,4.9241276 L9.8215427,7.6536198 C9.9231052,7.8694401 10.014088,8.1254625 10.094492,8.4216862 L10.119883,8.4216862 C10.170664,8.2439518 10.265879,7.9794664 10.405527,7.6282291 L11.852793,4.9241276 L14.137949,4.9241276 L11.408457,9.4373112 L14.214121,14.026667 L11.782969,14.026667 L10.215097,11.062311 C10.155852,10.952286 10.094492,10.749161 10.031015,10.452936 L10.005625,10.452936 C9.9760017,10.592585 9.9061775,10.804173 9.7961521,11.087702 L8.2219334,14.026667 L5.7780857,14.026667 L8.6789646,9.4753971 z" 
+                              Margin="5.778,5.924,5.786,4.973" Stretch="Fill" Fill="{Binding ElementName=WindowClose, Path=BorderBrush}" ></Path>
+            </Border>
+        </StackPanel>
+    </Grid>
+</Window>

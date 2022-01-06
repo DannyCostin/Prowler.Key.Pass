@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="Prowler.KeyPass.Presentation.View.KeyPassAbout"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Prowler.KeyPass.Presentation.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" Visibility="{Binding Path=ShowAboutView}"
+             KeyboardNavigation.TabNavigation="Cycle">
+    <Grid Background="{StaticResource BackgroundColor2}">
+        <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,87,0,0">
+            <local:Logo RenderOptions.BitmapScalingMode="HighQuality" HorizontalAlignment="Center" Margin="0,0,0,15" VerticalAlignment="Top" Height="223" Width="239"/>
+            <TextBlock Width="450" TextWrapping="WrapWithOverflow" Foreground="WhiteSmoke" Text="Prowler Key Pass is a free open source password manager, which helps you to manage your passwords in a secure way."></TextBlock>
+            <TextBlock Width="450" TextWrapping="WrapWithOverflow" Foreground="WhiteSmoke" Text="You can store all your passwords in one database, which is locked with a key."></TextBlock>
+            <TextBlock Width="450" TextWrapping="WrapWithOverflow" Foreground="WhiteSmoke" Margin="0,10,0,0" Text="App Copyright (C) 2021 Danny Costin."></TextBlock>
+            <TextBlock Width="450" TextWrapping="WrapWithOverflow" Foreground="WhiteSmoke" Text="Images Copyright (C) Butkovits Atila."></TextBlock>
+            <TextBlock Width="450" TextWrapping="WrapWithOverflow" Foreground="WhiteSmoke" Margin="0,10,0,0" Text="This program is free software; you can redistribute it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version."></TextBlock>
+            <TextBlock Width="450" TextWrapping="WrapWithOverflow" Foreground="WhiteSmoke" Margin="0,10,0,15"  Text="This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details."></TextBlock>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Image x:Name="PayPal" RenderOptions.BitmapScalingMode="HighQuality" Source="{StaticResource PayPal}" Cursor="Hand" Stretch="None" Margin="0,0,10,0" MouseLeftButtonUp="PayPal_MouseLeftButtonUp"></Image>
+                <Button x:Name="OK" Content="OK" Height="30" Width="50" Click="OK_Click"></Button>
+            </StackPanel>
+        </StackPanel>     
+    </Grid>
+</UserControl>
