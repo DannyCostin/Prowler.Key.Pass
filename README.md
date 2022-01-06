@@ -1,4 +1,4 @@
-# Prowler.Key.Pass
+# Prowler Key Pass
 Prowler Key Pass is a free open source password manager, which helps you to manage your passwords in a secure way.
 You can store all your passwords in one database, which is locked with a key.
 
